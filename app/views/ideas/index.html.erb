@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ideas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</b></t></th>
+      <th>Age</b></t></th>
+      <th>City</b></t></th>
+      <th>Description</b></t></th>
+      <th>Options</b></t></th>
+      <th colspan="5"></t></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.name %></td>
+        <td><%= idea.Age %></td>
+        <td><%= idea.description %></td>
+        <td><%= idea.pictureupload %></td>
+        <td><%= link_to 'View', idea %></td>
+        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+        <td><%= link_to 'Delete', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<tr>
+<td><b><a href="http://localhost:3000/ideas/new" color="red"><%= link_to 'Click here to Create Post', new_idea_path %></a></b></td>
+</tr>
